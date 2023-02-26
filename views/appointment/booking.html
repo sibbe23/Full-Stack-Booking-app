@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Booking AppointmentApp</title>
+    <style>
+        
+        .del_button,.edit_btn{
+            height: fit-content;
+            padding: 0 7px;
+            border: 1px solid grey;
+            border-radius: 5px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.2/axios.min.js" integrity="sha512-NCiXRSV460cHD9ClGDrTbTaw0muWUBf/zB/yLzJavRsPNUl9ODkUVmUHsZtKu17XknhsGlmyVoJxLg/ZQQEeGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div  class="container border-dark-subtle  border rounded" style="background-color:rgb(255, 255, 255);padding-top: 1%;">
+            <div class="text-center">
+                <h1 class="text-success">Book a call</h1>
+                <p>Book a call slot and our representative will call you within 1hr of selected time</p>
+            </div>
+            <hr>
+            <form class="formdata">
+                <div class="input-group">
+                    <span class="input-group-text"> Username </span>
+                    <input class="form-control" type="text" id="name" name="name">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-text"> Email </span>
+                
+                    <input class="form-control" type="email" id="email" name="email">
+                </div>
+                <br>
+                <div class="input-group">
+                    <span class="input-group-text"> Phone </span>
+
+                    <input class="form-control" type="number"  id="phone" name="phone" value="">
+                </div>
+                <div class="button d-grid mt-5 mb-2">
+                    <button class="btn btn-outline-primary" style="width: 100%; border-width: thin; border-radius: 5px;border-color: lightgray; border-style:solid;" type="submit">Book Now!</button>
+                </div>
+            </form>
+            <div class="pb-4 local">
+                
+            </div>
+        </div>
+        
+    </div>
+    <script src="../../public/js/booking.js"></script>
+</body>
+</html>
