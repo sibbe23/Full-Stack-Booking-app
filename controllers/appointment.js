@@ -17,7 +17,7 @@ exports.bookAppointment = (req, res, next) => {
 exports.getAllAppointments = (req, res, next) => {
   Appointment.findAll()
     .then((appointments) => {
-      return res.send(JSON.stringify({appointments}));
+      return res.json({appointments})
       })
     .catch((err) => console.log(err));
 };
@@ -36,7 +36,7 @@ exports.getEditAppointment = (req, res, next) => {
   const id = req.params.id;
   Appointment.findByPk(id)
   .then(appointment=>{
-    return res.send(JSON.stringify({appointment}));
+    return res.json({appointment})
   }).catch(err=>console.log(err));
 
 };
@@ -54,7 +54,7 @@ exports.updateAppointment = (req, res, next) => {
   })
   .then(result=>{
     console.log("Updated");
-    return res.send(JSON.stringify({result}));
+    return res.json({result})
     
   })
   .catch(err=>console.log(err));
