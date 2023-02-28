@@ -3,7 +3,7 @@ const Appointment = require("../models/appointment");
 exports.bookAppointment = (req, res, next) => {
   const name = req.body.name;
   const email = req.body.email;
-  const phone = String(req.body.phone);
+  const phone = req.body.phone;
   Appointment.create({
     name: name,
     email: email,
@@ -17,7 +17,7 @@ exports.bookAppointment = (req, res, next) => {
 exports.getAllAppointments = (req, res, next) => {
   Appointment.findAll()
     .then((appointments) => {
-      return res.json({appointments})
+      return res.send(JSON.stringify({appointments}));
       })
     .catch((err) => console.log(err));
 };
@@ -33,14 +33,10 @@ exports.deleteAppontment = (req, res, next) => {
     .catch((err) => console.log(err));
 };
 exports.getEditAppointment = (req, res, next) => {
-  // const editMode = req.query.edit;
-  // if (!editMode) {
-  //   return res.redirect("/");
-  // }
   const id = req.params.id;
   Appointment.findByPk(id)
   .then(appointment=>{
-    return res.json({appointment});
+    return res.send(JSON.stringify({appointment}));
   }).catch(err=>console.log(err));
 
 };
@@ -58,7 +54,7 @@ exports.updateAppointment = (req, res, next) => {
   })
   .then(result=>{
     console.log("Updated");
-    return res.json({result});
+    return res.send(JSON.stringify({result}));
     
   })
   .catch(err=>console.log(err));
